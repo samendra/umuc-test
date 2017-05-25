@@ -34,7 +34,7 @@ public class TestUtils {
     }
 
 
-    public static WebDriver getBrowserStackDriver() throws JSONException, FileNotFoundException, IOException, ParseException {
+    public static WebDriver getBrowserStackDriver(String url) throws JSONException, FileNotFoundException, IOException, ParseException {
         JSONObject config = getConfig();
         //			System.setProperty("webdriver.chrome.driver", "/Users/sbandara/Downloads/chromedriver");
         JSONArray envs = (JSONArray) config.get("environments");
@@ -76,7 +76,7 @@ public class TestUtils {
 
         WebDriver driver = new RemoteWebDriver(new URL("http://"+username+":"+accessKey+"@"+config.get("server")+"/wd/hub"), capabilities);
 
-        driver.get("http://author-new-qa.umuc.edu/");
+        driver.get(url);
         // driver.get("http://author-new-qa.umuc.edu/commonspot/dashboard/index.html#mode=read&url=/index.cfm?cs_pgIsInLView=1");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
