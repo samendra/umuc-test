@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by samendra.bandara on 5/23/17.
  */
-public class HomePageTest {
+public class TestHomePage {
     private WebDriver driver;
     private HomePage homePage;
 
