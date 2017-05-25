@@ -16,7 +16,8 @@ public class HomePageTest {
 
     @Before
     public void setUp() throws Exception {
-        driver=TestUtils.getDriver("https://eapp-umuc.cs54.force.com/eapp?key=wN46.~2");
+        //driver=TestUtils.getDriver("https://eapp-umuc.cs54.force.com/eapp?key=wN46.~2");
+        driver = TestUtils.getBrowserStackDriver();
         homePage=new HomePage(driver);
 
     }
