@@ -1,0 +1,57 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "samendrabandara1",
+  "key": "sqGpJs1AzFoH73vqmREg",
+
+  "capabilities": {
+    "browserstack.debug": true
+  },
+
+  "environments": [{
+    "browser": "chrome",
+    "platform" : "MAC"
+  }]
+   "environments": [{
+    "browser": "Firefox"
+    "platform" : "MAC"
+    
+  }]
+   "environments": [{
+            "browser": "safari"
+            "platform" : "MAC"
+
+          }]
+    "environments": [{
+             "browser": "safari"
+             "platform" : "WINDOWS"
+
+           }]
+   "environments": [{
+      "browser": "Firefox"
+      "platform" : "WINDOWS"
+
+    }]
+   "environments": [{
+      "browser": "Chrome"
+      "platform" : "WINDOWS"
+
+    }]
+   "environments": [{
+          "browser": "Firefox"
+          "platform" : "WINDOWS"
+
+        }]
+        "environments": [{
+                  "browser": "Firefox"
+                  "platform" : "WINDOWS"
+
+                }]
+
+
+
+
+   
+
+  
+   
+}
