@@ -10,22 +10,19 @@
       "environments": [{
         "browser": "chrome",
         "platform" : "MAC"
-      }]
-       "environments": [{
-        "browser": "Firefox"
-        "platform" : "MAC"
+      },{
+                "browser": "Firefox"
+                "platform" : "MAC"
 
-      }]
-       "environments": [{
-              "browser": "Chrome"
-              "platform" : "WINDOWS"
+              },{
+                              "browser": "Chrome"
+                              "platform" : "WINDOWS"
 
-            }]
-        "environments": [{
-                     "browser": "Firefox"
-                     "platform" : "WINDOWS"
+                            },{
+                                                   "browser": "Firefox"
+                                                   "platform" : "WINDOWS"
 
-             }]
+                                           }]
 
 
 
