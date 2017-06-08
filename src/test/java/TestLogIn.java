@@ -1,4 +1,5 @@
 import com.umuc.eApp.LogIn;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ public class TestLogIn {
 
     @Before
     public void setUp() throws Exception {
-      //  driver = TestUtils.getDriver("https://eapp-umuc.cs54.force.com/eapp?key=wN46.~2");
+       //driver = TestUtils.getDriver("https://eapp-umuc.cs54.force.com/eapp?key=wN46.~2");
        driver = TestUtils.getBrowserStackDriver("https://eapp-umuc.cs54.force.com/eapp?key=wN46.~2");
         logIn = new LogIn(driver);
 
@@ -22,6 +23,13 @@ public class TestLogIn {
     @Test
     public void testEmailHappyPath() throws Exception {
         logIn.populateLogIn("test@umuc.com", "test@umuc.com", "Test123+", "Test123+");
+        Thread.sleep(2000);
+        assertTrue(logIn.isPersonalInfoHeaderDisplayed());
+
+    }
+    @Test
+    public void testConintueApplicationLogIn() throws Exception {
+        logIn.continueApplicationLogIn("test@umuc.com", "Test123+");
         Thread.sleep(2000);
         assertTrue(logIn.isPersonalInfoHeaderDisplayed());
 
@@ -42,6 +50,13 @@ public class TestLogIn {
         assertEquals("Invalid Email Address",logIn.getInvalidEmailErrorMsg());
 
     }
+    @Test
+    public void testEmptyEmailErrorMsg() throws Exception {
+        logIn.clickEmailBox();
+        logIn.clickConfirmPasswordBox();
+        assertEquals("Invalid Email Address",logIn.getInvalidEmailErrorMsg());
+    }
+
     /*
     Testing that the passwords match
      */
@@ -62,6 +77,16 @@ public class TestLogIn {
         logIn.clickConfirmPasswordBox();
         assertEquals("Invalid Password",logIn.getInvalidPasswordErrorMsg());
 
+    }
+    @Test
+    public void testEmptyPasswordErrorMsg() throws Exception {
+        logIn.clickPasswordBox();
+        logIn.clickConfirmPasswordBox();
+        assertEquals("Invalid Password",logIn.getInvalidPasswordErrorMsg());
+    }
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
     }
 
 

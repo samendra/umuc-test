@@ -40,6 +40,33 @@ public class TestHomePage {
         assertTrue(homePage.startNewTab());
 
     }
+    @Test
+    public void testHelpLinkIsDisplayed() throws Exception {
+        assertTrue(homePage.startNewTab());
+
+    }
+    @Test
+    public void testWelcomeMessageIsDisplayed() throws Exception {
+
+        assertTrue(homePage.continueTab());
+    }
+    @Test
+    public void testGoArmyMessageIsDisplayed() throws Exception {
+
+
+    }
+    @Test
+    public void testGoArmyLink() throws Exception {
+
+    }
+    @Test
+    public void testGoArmyMessageTruncate() throws Exception {
+
+
+    }
+
+
+
 
     @After
     public void tearDown()throws Exception {

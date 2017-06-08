@@ -17,6 +17,7 @@ public class LogIn {
 
     public void populateEmail(String email) {
         WebElement emailAddress = driver.findElement(By.xpath("//*[@id=\"APP01\"]"));
+        emailAddress.clear();
         emailAddress.sendKeys(email);
 
     }
@@ -28,6 +29,7 @@ public class LogIn {
 
     public void populateConfirmationEmail(String confirmationemail ) {
         WebElement confirmEmailAddress = driver.findElement(By.xpath("//*[@id=\"APP02\"]"));
+        confirmEmailAddress.clear();
         confirmEmailAddress.sendKeys(confirmationemail);
 
     }
@@ -38,6 +40,7 @@ public class LogIn {
     }
     public void populatePassword(String pass) {
         WebElement password = driver.findElement(By.xpath("//*[@id=\"APP03\"]"));
+        password.clear();
         password.sendKeys(pass);
 
     }
@@ -54,6 +57,7 @@ public class LogIn {
 
     public void populatePasswordConfirmation(String confirmPassword ) {
         WebElement confirmPass = driver.findElement(By.xpath("//*[@id=\"APP04\"]"));
+        confirmPass.clear();
         confirmPass.sendKeys(confirmPassword);
 
     }
@@ -68,6 +72,20 @@ public class LogIn {
         populatePassword(pass);
         populatePasswordConfirmation(confirmPassword);
         clickSubmit();
+
+    }
+    public void continueApplicationLogIn(String emailAdd, String pass) throws InterruptedException {
+        Thread.sleep(4000);
+        WebElement continu=driver.findElement(By.xpath("//*[@id=\"j_id0:j_id9\"]/div/div/div[2]/ul/li[2]/a"));
+        continu.click();
+        WebElement email= driver.findElement(By.xpath("//*[@id=\"APP92\"]"));
+        email.clear();
+        email.sendKeys(emailAdd);
+        WebElement password= driver.findElement(By.xpath("//*[@id=\"APP93\"]"));
+        password.clear();
+        password.sendKeys(pass);
+        WebElement signInButton = driver.findElement(By.xpath("//*[@id=\"continue2\"]/form/div[3]/button"));
+        signInButton.click();
 
     }
     public String getConfirmationEmailErrorMsg() {

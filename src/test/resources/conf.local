@@ -15,14 +15,24 @@
                 "platform" : "MAC"
 
               },{
-                              "browser": "Chrome"
-                              "platform" : "WINDOWS"
+                              "browser": "IE"
+                              "platform" : "MAC"
 
                             },{
+                                      "browser": "safari",
+                                      "platform" : "MAC"
+                                    }{
+                                                   "browser": "IE"
+                                                   "platform" : "WINDOWS"
+
+                                           },{
                                                    "browser": "Firefox"
                                                    "platform" : "WINDOWS"
 
-                                           }]
+                                           },{
+                                                      "browser": "chrome",
+                                                      "platform" : "WINDOWS"
+                                                    }]
 
 
 
