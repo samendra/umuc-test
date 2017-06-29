@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 /**
  * Created by samendra.bandara on 6/6/17.
  */
@@ -19,10 +21,12 @@ public class AboutYouPage {
         this.driver=driver;
 
     }
-    public void populatePersonalInfo(String fName, String lName, String phone, String dob) {
+    public void populatePersonalInfo(String fName, String lName, String phone, String dob,String country, String sNumber) throws InterruptedException {
         populateFirstName(fName);
         populateLastName(lName);
         populateDOB(dob);
+        populateCitizenship(country);
+        populateSocialSecurity(sNumber);
         populatePhone(phone);
 
 
@@ -87,9 +91,13 @@ public class AboutYouPage {
 //        WebDriverWait wait= new WebDriverWait(driver,10);
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("APP48")));
         //Thread.sleep(2000);
-        WebElement dropDown = driver.findElement(By.xpath("//*[@id=\"j_id0:j_id33\"]/div[1]/div[2]/div[2]/div/div/span[1]"));
-        Select countries = new Select(driver.findElement(By.name("Citizenship")));
-        countries.selectByValue(country);
+        List<WebElement> citizenship = driver.findElements(By.xpath("//*[@id=\"j_id0:j_id19\"]/div[1]/div[2]/div[2]/div/div/span[1]/span[1]"));
+        citizenship.get(0).click();
+        Thread.sleep(2000);
+        List<WebElement>countryDropDown= driver.findElements(By.xpath("/html/body/div[5]/div/span/div/span/ul/li[1]/span"));
+        countryDropDown.get(0).click();
+        Select countries = new Select(driver.findElement(By.xpath("//*[@id=\"APP48\"]")));
+        countries.selectByVisibleText(country);
 
     }
     public void populateCountryCode(String code) {

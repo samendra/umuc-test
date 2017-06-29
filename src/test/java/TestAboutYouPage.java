@@ -17,8 +17,8 @@ public class TestAboutYouPage {
 
     @Before
     public void setUp() throws Exception {
-       // driver = TestUtils.getDriver("https://eapp-umuc.cs54.force.com/eapp?key=wN46.~2");
-        driver = TestUtils.getBrowserStackDriver("https://eapp-umuc.cs54.force.com/eapp?key=wN46.~2");
+       driver = TestUtils.getDriver("https://eapp-umuc.cs54.force.com/eapp?key=wN46.~2");
+       // driver = TestUtils.getBrowserStackDriver("https://eapp-umuc.cs54.force.com/eapp?key=wN46.~2");
         logIn = new LogIn(driver);
         logIn.continueApplicationLogIn("test@umuc.com", "Test123+");
         aboutYouPage = new AboutYouPage(driver);
@@ -49,6 +49,7 @@ public class TestAboutYouPage {
        assertEquals("Firstname is required", aboutYouPage.getFirstNameErrorMsg());
 
     }
+
     @Test
     public void testLastNameErrorMsg() throws Exception {
         Thread.sleep(2000);
@@ -105,13 +106,18 @@ public class TestAboutYouPage {
     public void testForeignUniversityJointProgram() throws Exception {
 
     }
+    @Test
+    public void testSocialSecurityRequiredMessege() throws Exception {
 
-
-
-    @After
-    public void tearDown() throws Exception {
-        driver.quit();
     }
+    
+
+
+
+//    @After
+//    public void tearDown() throws Exception {
+//        driver.quit();
+//    }
 
 
 

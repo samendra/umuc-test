@@ -76,7 +76,7 @@ public class LogIn {
     }
     public void continueApplicationLogIn(String emailAdd, String pass) throws InterruptedException {
         Thread.sleep(4000);
-        WebElement continu=driver.findElement(By.xpath("//*[@id=\"j_id0:j_id9\"]/div/div/div[2]/ul/li[2]/a"));
+        WebElement continu=driver.findElement(By.xpath("//*[@id=\"j_id0:j_id5\"]/div/div/div[2]/ul/li[2]/a"));
         continu.click();
         WebElement email= driver.findElement(By.xpath("//*[@id=\"APP92\"]"));
         email.clear();
@@ -84,7 +84,7 @@ public class LogIn {
         WebElement password= driver.findElement(By.xpath("//*[@id=\"APP93\"]"));
         password.clear();
         password.sendKeys(pass);
-        WebElement signInButton = driver.findElement(By.xpath("//*[@id=\"continue2\"]/form/div[3]/button"));
+        WebElement signInButton = driver.findElement(By.xpath("//*[@id=\"signIn\"]/button"));
         signInButton.click();
 
     }
